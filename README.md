@@ -1,3 +1,5 @@
+**NOTE:** this is wip and won't work yet
+
 Flake meant for providing [nixified-ai](https://github.com/nixified-ai/flake) with configuration options at build time by overriding the default input. It's basically a cheat to parameterise the nixified-ai flake over another flake.
 
 ## Usage
