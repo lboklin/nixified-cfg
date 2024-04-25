@@ -26,10 +26,10 @@
 
       imports = [
         ./packages.nix
-        ({ inputs', ... }: {
+        ({ ... }: {
           flake = {
-            # this doesn't feel ideal, but I am bikeshedding
-            lib.comfyui.availableModels = with inputs'.nixpkgs;
+            # this doesn't feel ideal, but there is only one supported system and I can't figure this out.
+            lib.comfyui.availableModels = with import nixpkgs { system = "x86_64-linux"; };
               import ./models { inherit lib; inherit (pkgs) fetchurl stdenv; };
             cfg.comfyui = let basePath = "/var/lib/comfyui"; in {
               modelsPath = "${basePath}/models";
