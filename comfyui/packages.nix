@@ -23,7 +23,7 @@
       phases = [ "installPhase" ];
     };
 
-    collectionDrv = pkgs.callPackage ./models/collection.nix {};
+    collectionDrv = pkgs.callPackage ./models/make-collection.nix {};
   in {
     # Populate the packages provided by the flake with the models in `comfyuiModels`
     # plus the entire collection ready to be added to extra_model_paths.yaml.

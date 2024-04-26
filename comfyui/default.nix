@@ -1,27 +1,17 @@
-{ ... }: {
+{ inputs, self, ... }: {
   flake = {
-    lib.comfyui.models = pkgs:
-      import ./models { inherit (pkgs) lib fetchurl stdenv; };
-    cfg.comfyui = pkgs: let
+    cfg.comfyui = system: let
+      pkgs = import inputs.nixpkgs { inherit system; };
+      models = import ./models { inherit (pkgs system) lib fetchurl stdenv; };
       basePath = "/var/lib/comfyui";
     in {
-      modelsPath = "${basePath}/models";
+      inherit models;
+      modelsPath = "${self.packages."${system}".collection}";
       inputPath = "${basePath}/input";
       outputPath = "${basePath}/output";
       tempPath = "${basePath}/temp";
       userPath = "${basePath}/user";
       customNodes = [];
-      models = {
-        checkpoints = {};
-        clip = {};
-        clip_vision = {};
-        configs = {};
-        controlnet = {};
-        embeddings = {};
-        upscale_models = {};
-        vae = {};
-        vae_approx = {};
-      };
     };
   };
   imports = [
