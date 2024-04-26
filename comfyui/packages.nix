@@ -31,7 +31,7 @@
     # a subset manually
     packages = with lib; let
     in {
-      collection = collectionDrv comfyuiModels;
+      comfyui-model-collection = collectionDrv comfyuiModels;
     } // pipe comfyuiModels [
       (mapAttrsToList (type:
         mapAttrsToList (name: fetched: {
