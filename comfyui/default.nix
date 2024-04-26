@@ -7,7 +7,7 @@
     in {
       modelsPath = "${basePath}/models";
       inputPath = "${basePath}/input";
-      outputPath = "${basePath}/test-output";
+      outputPath = "${basePath}/output";
       tempPath = "${basePath}/temp";
       userPath = "${basePath}/user";
       customNodes = [];
