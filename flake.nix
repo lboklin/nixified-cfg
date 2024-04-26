@@ -18,7 +18,6 @@
       in {
         _module.args = {
           inherit pkgs;
-          comfyuiModels = import ./comfyui/models { inherit lib; inherit (pkgs) fetchurl stdenv; };
         };
       };
       systems = [ "x86_64-linux" ];

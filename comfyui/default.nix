@@ -2,11 +2,11 @@
   flake = {
     cfg.comfyui = system: let
       pkgs = import inputs.nixpkgs { inherit system; };
-      models = import ./models { inherit (pkgs system) lib fetchurl stdenv; };
+      models = pkgs.callPackage ./models {};
       basePath = "/var/lib/comfyui";
     in {
       inherit models;
-      modelsPath = "${self.packages."${system}".collection}";
+      modelsPath = "${self.packages."${system}".comfyui-models}";
       inputPath = "${basePath}/input";
       outputPath = "${basePath}/output";
       tempPath = "${basePath}/temp";

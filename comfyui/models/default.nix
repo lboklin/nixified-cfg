@@ -8,7 +8,8 @@
 
 let
   fetchModel = import ./fetch-model.nix { inherit lib fetchurl; };
-in {
+  collectionDrv = import ./make-collection.nix { inherit lib stdenv; };
+in collectionDrv {
   checkpoints = {
     # # https://civitai.com/models/112902/dreamshaper-xl
     # dreamshaper-xl-fp16 = (fetchModel {

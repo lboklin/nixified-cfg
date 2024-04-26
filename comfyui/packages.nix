@@ -22,25 +22,11 @@
       '' + (fetched-to-symlink name fetched);
       phases = [ "installPhase" ];
     };
-
-    collectionDrv = pkgs.callPackage ./models/make-collection.nix {};
   in {
-    # Populate the packages provided by the flake with the models in `comfyuiModels`
-    # plus the entire collection ready to be added to extra_model_paths.yaml.
-    # We package the individual models just in case someone wishes to simply install
-    # a subset manually
-    packages = with lib; let
-    in {
-      comfyui-model-collection = collectionDrv comfyuiModels;
-    } // pipe comfyuiModels [
-      (mapAttrsToList (type:
-        mapAttrsToList (name: fetched: {
-          name = "comfyui-${type}-${name}";
-          value = modelDrv name fetched;
-        })))
-      (lists.flatten)
-      (builtins.listToAttrs)
-    ];
+    packages = let comfyui-models = pkgs.callPackage ./models {}; in {
+      # note that this goes *inside* models/
+      inherit comfyui-models;
+    };
 
     checks = let
       yaml-file = import ./models/fetch-model.nix { inherit lib; inherit (pkgs) fetchurl; } {
@@ -50,7 +36,9 @@
         };
     in {
       # TODO: add some more (lightweight) stuff to the model set
-      comfyui-model-collection = collectionDrv { configs = { controlnet-v1_1_fe-sd15-tile = yaml-file; }; };
+      comfyui-model-collection = let
+        collectionDrv = pkgs.callPackage ./models/make-collection.nix {};
+      in collectionDrv { configs = { controlnet-v1_1_fe-sd15-tile = yaml-file; }; };
       # fetch a 2KB yaml file to check that it works.
       # nix build .#checks.<system>.comfyuiModelPkg => ./result/controlnet-v1_1_fe-sd15-tile.yaml
       comfyui-model-fetch = modelDrv "controlnet-v1_1_fe-sd15-tile" yaml-file;
