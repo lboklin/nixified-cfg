@@ -15,40 +15,40 @@ TODO:
   - [ ] https://github.com/Acly/comfyui-tooling-nodes
 - [ ] models
   - [ ] checkpoints
-    - [ ] SD 1.5
-      - [ ] https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/realisticVisionV51_v51VAE.safetensors
-      - [ ] https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_8_pruned.safetensors
-    - [ ] SD XL
-      - [ ] https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/juggernautXL_version6Rundiffusion.safetensors
-  - [ ] inpaint
-    - [ ] shared between SD 1.5 and SD XL
-      - [ ] https://huggingface.co/Acly/MAT/resolve/main/MAT_Places512_G_fp16.safetensors
-    - [ ] SD XL
-      - [ ] https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/fooocus_inpaint_head.pth
-      - [ ] https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint_v26.fooocus.patch
-  - [ ] loras
-    - [ ] SD 1.5
-      - [ ] https://huggingface.co/latent-consistency/lcm-lora-sdv1-5/resolve/main/pytorch_lora_weights.safetensors?download=true
-        - rename to lcm-lora-sdv1-5.safetensors 
-    - [ ] SD XL
-      - [ ] https://huggingface.co/latent-consistency/lcm-lora-sdxl/resolve/main/pytorch_lora_weights.safetensors?download=true
-        - rename to lcm-lora-sdxl.safetensors
-  - [ ] controlnets
-    - [ ] SD 1.5
-      - [ ] https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_inpaint_fp16.safetensors
-      - [ ] https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_lora_rank128_v11f1e_sd15_tile_fp16.safetensors
-  - [ ] ipadapters
-    - [ ] SD 1.5
-      - [ ] https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter_sd15.safetensors
-    - [ ] SD XL
-      - [ ] https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors
-  - [ ] upscale_models (all shared between SD 1.5 and SD XL)
-    - [ ] https://huggingface.co/gemasai/4x_NMKD-Superscale-SP_178000_G/resolve/main/4x_NMKD-Superscale-SP_178000_G.pth
-    - [ ] https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X2_DIV2K.safetensors
-    - [ ] https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X3_DIV2K.safetensors
-    - [ ] https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X4_DIV2K.safetensors
-  - [ ] clip_vision
-    - [ ] https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors?download=true
+    - [x] SD 1.5
+      - [x] https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/realisticVisionV51_v51VAE.safetensors
+      - [x] https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_8_pruned.safetensors
+    - [x] SD XL
+      - [x] https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/juggernautXL_version6Rundiffusion.safetensors
+  - [x] inpaint
+    - [x] shared between SD 1.5 and SD XL
+      - [x] https://huggingface.co/Acly/MAT/resolve/main/MAT_Places512_G_fp16.safetensors
+    - [x] SD XL
+      - [x] https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/fooocus_inpaint_head.pth
+      - [x] https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint_v26.fooocus.patch
+  - [x] loras
+    - [x] SD 1.5
+      - [x] https://huggingface.co/latent-consistency/lcm-lora-sdv1-5/resolve/main/pytorch_lora_weights.safetensors?download=true
+        - name: lcm-lora-sdv1-5.safetensors
+    - [x] SD XL
+      - [x] https://huggingface.co/latent-consistency/lcm-lora-sdxl/resolve/main/pytorch_lora_weights.safetensors?download=true
+        - name: lcm-lora-sdxl.safetensors
+  - [x] controlnets
+    - [x] SD 1.5
+      - [x] https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_inpaint_fp16.safetensors
+      - [x] https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_lora_rank128_v11f1e_sd15_tile_fp16.safetensors
+  - [x] ipadapters
+    - [x] SD 1.5
+      - [x] https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter_sd15.safetensors
+    - [x] SD XL
+      - [x] https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors
+  - [x] upscale_models (all shared between SD 1.5 and SD XL)
+    - [x] https://huggingface.co/gemasai/4x_NMKD-Superscale-SP_178000_G/resolve/main/4x_NMKD-Superscale-SP_178000_G.pth
+    - [x] https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X2_DIV2K.safetensors
+    - [x] https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X3_DIV2K.safetensors
+    - [x] https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X4_DIV2K.safetensors
+  - [x] clip_vision (all shared between SD 1.5 and SD XL)
+    - [x] https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors?download=true
 
 ## Usage
 
