@@ -7,14 +7,16 @@ Flake meant for providing [nixified-ai](https://github.com/nixified-ai/flake) wi
 This particular configuration is supposed to satisfy the [minimum requirements](https://github.com/Acly/krita-ai-diffusion/wiki/ComfyUI-Setup) for using it with the [Krita AI plugin](https://github.com/Acly/krita-ai-diffusion/) (installed separately).
 
 TODO:
-- [ ] custom nodes
+- [ ] as it stands, custom nodes can't depend on any python libraries
+- [x] custom nodes
   - [ ] https://github.com/Fannovel16/comfyui_controlnet_aux
-  - [ ] https://github.com/cubiq/ComfyUI_IPAdapter_plus
-  - [ ] https://github.com/ssitu/ComfyUI_UltimateSDUpscale
-  - [ ] https://github.com/Acly/comfyui-inpaint-nodes
-  - [ ] https://github.com/Acly/comfyui-tooling-nodes
-- [ ] models
-  - [ ] checkpoints
+    - depends on python libraries not present in comfyui's python environment
+  - [x] https://github.com/cubiq/ComfyUI_IPAdapter_plus
+  - [x] https://github.com/ssitu/ComfyUI_UltimateSDUpscale
+  - [x] https://github.com/Acly/comfyui-inpaint-nodes
+  - [x] https://github.com/Acly/comfyui-tooling-nodes
+- [x] models
+  - [x] checkpoints
     - [x] SD 1.5
       - [x] https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/realisticVisionV51_v51VAE.safetensors
       - [x] https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_8_pruned.safetensors
