@@ -11,6 +11,6 @@ git clone https://github.com/lboklin/nixified-cfg
 cd nixified-cfg
 # make whatever changes you want to `cfg.comfyui` in ./flake.nix
 # then pass it in when calling a nixified-ai package:
-nix {build,run} github:lboklin/nixified-ai#comfyui-{amd,nvidia} --override-input cfg .
+nix {build,run} github:lboklin/nixified-ai#comfyui-{amd,nvidia} --override-input nixified-cfg .
 ```
 
