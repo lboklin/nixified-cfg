@@ -1,5 +1,5 @@
 {
-  description = "Default configuration flake used by nixified-ai";
+  description = "Minimal configuration satisfying all basic requirements of the Krita AI plugin";
 
   inputs = {
     nixpkgs = {
