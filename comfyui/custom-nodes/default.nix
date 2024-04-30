@@ -42,7 +42,7 @@ in drv {
     pname = "comfyui-controlnet-aux";
     version = "unstable-2024-04-05";
     pyproject = true;
-    dependencies = with pkgs.python3Packages; [
+    passthru.dependencies = with pkgs.python3Packages; [
       matplotlib
       opencv4
       scikit-image
