@@ -33,7 +33,7 @@ let
   drv = nodes:
     (pkgs.linkFarm "comfyui-custom-nodes" nodes)
       # can't do it this way
-      .overrideAttrs (old: old // { dependencies = deps nodes; });
+      .overrideAttrs (old: old // { passthru.dependencies = deps nodes; });
 
 in drv {
   # # https://github.com/Fannovel16/comfyui_controlnet_aux
@@ -42,7 +42,7 @@ in drv {
   #   pname = "comfyui-controlnet-aux";
   #   version = "unstable-2024-04-05";
   #   pyproject = true;
-  #   dependencies = with pkgs.python3Packages; [
+  #   passthru.dependencies = with pkgs.python3Packages; [
   #     matplotlib
   #     opencv4
   #     scikit-image

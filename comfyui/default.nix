@@ -5,8 +5,8 @@
       # this is the base directory wherein misc mutable data is stored
       basePath = "/var/lib/comfyui";
     in {
-      models = "${self.packages."${system}".comfyui-models}";
-      customNodes = "${self.packages."${system}".comfyui-custom-nodes}";
+      models = self.packages."${system}".comfyui-models;
+      customNodes = self.packages."${system}".comfyui-custom-nodes;
       inputPath = "${basePath}/input";
       outputPath = "${basePath}/output";
       tempPath = "${basePath}/temp";
