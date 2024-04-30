@@ -11,10 +11,10 @@ let
   # into $out.  So just copy everything into $out instead of from $src so we can
   # make sure we get everything in the future, and we use the patched versions.
   install = ''
-  shopt -s dotglob
-  shopt -s extglob
-  cp -r ./!($out|$src) $out/
-'';
+    shopt -s dotglob
+    shopt -s extglob
+    cp -r ./!($out|$src) $out/
+  '';
   mkComfyUICustomNodes = args: pkgs.stdenv.mkDerivation ({
     installPhase = ''
       runHook preInstall
