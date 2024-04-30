@@ -1,4 +1,4 @@
-## In here is where you add your custom nodes.
+## In here is where you add your custom nodes. Some examples are included.
 ## FIXME: dependencies don't work.
 { lib
 , pkgs
@@ -35,4 +35,38 @@ let
       # can't do it this way
       .overrideAttrs (old: old // { dependencies = deps nodes; });
 
-in drv {}
+in drv {
+  # # https://github.com/Fannovel16/comfyui_controlnet_aux
+  # # Nodes for providing ControlNet hint images.
+  # controlnet-aux = mkComfyUICustomNodes {
+  #   pname = "comfyui-controlnet-aux";
+  #   version = "unstable-2024-04-05";
+  #   pyproject = true;
+  #   dependencies = with pkgs.python3Packages; [
+  #     matplotlib
+  #     opencv4
+  #     scikit-image
+  #   ];
+  #   src = fetchFromGitHub {
+  #     owner = "Fannovel16";
+  #     repo = "comfyui_controlnet_aux";
+  #     rev = "c0b33402d9cfdc01c4e0984c26e5aadfae948e05";
+  #     hash = "sha256-D9nzyE+lr6EJ+9Egabu+th++g9ZR05wTg0KSRUBaAZE=";
+  #     fetchSubmodules = true;
+  #   };
+  # };
+
+  # # Handle upscaling of smaller images into larger ones.  This is helpful to go
+  # # from a prototyped image to a highly detailed, high resolution version.
+  # ultimate-sd-upscale = mkComfyUICustomNodes {
+  #   pname = "ultimate-sd-upscale";
+  #   version = "unstable-2024-03-30";
+  #   src = fetchFromGitHub {
+  #     owner = "ssitu";
+  #     repo = "ComfyUI_UltimateSDUpscale";
+  #     rev = "b303386bd363df16ad6706a13b3b47a1c2a1ea49";
+  #     hash = "sha256-kcvhafXzwZ817y+8LKzOkGR3Y3QBB7Nupefya6s/HF4=";
+  #     fetchSubmodules = true;
+  #   };
+  # };
+}
