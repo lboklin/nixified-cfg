@@ -32,7 +32,6 @@ let
   ];
   drv = nodes:
     (pkgs.linkFarm "comfyui-custom-nodes" nodes)
-      # can't do it this way
       .overrideAttrs (old: old // { dependencies = deps nodes; });
 
 in drv {
