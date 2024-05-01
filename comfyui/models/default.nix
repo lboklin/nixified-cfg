@@ -1,10 +1,14 @@
-{ stdenv
-, lib
+{ lib
 , fetchurl
+, linkFarm
+, collection ? (import ./collection.nix)
 }:
 
 let
   fetchModel = import ./fetch-model.nix { inherit lib fetchurl; };
-  collection = builtins.mapAttrs (_: builtins.mapAttrs (_: fetchModel)) (import ./collection.nix);
-  mkCollection = import ./make-collection.nix { inherit lib stdenv; };
-in mkCollection collection
+  inherit (lib.attrsets) concatMapAttrs;
+  concatMapModels = f: concatMapAttrs (type: concatMapAttrs (f type));
+  collect = concatMapModels (type: name: model: let
+    fetched = fetchModel model;
+  in { "${type}/${name}.${fetched.format}" = fetched.path; });
+in linkFarm "comfyui-models" (collect collection)
