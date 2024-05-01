@@ -38,7 +38,8 @@
     };
   };
   clip = {};
-  clip_vision = {
+  # this is a bit ugly, but it works when you need to put something in a subdirectory
+  "clip_vision/sd1.5" = {
     model = {
       format = "safetensors";
       url = "https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors?download=true";
