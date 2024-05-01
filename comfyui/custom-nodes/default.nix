@@ -33,7 +33,7 @@ let
   drv = nodes:
     (pkgs.linkFarm "comfyui-custom-nodes" nodes)
       # can't do it this way
-      .overrideAttrs (old: old // { passthru.dependencies = deps nodes; });
+      .overrideAttrs (old: old // { dependencies = deps nodes; });
 
 in drv {
   # https://github.com/Fannovel16/comfyui_controlnet_aux
