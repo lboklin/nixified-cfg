@@ -32,6 +32,8 @@
     # });
   };
   embeddings = {};
+  inpaint = {};
+  ipadapter = {};
   loras = {};
   upscale_models = {};
   vae = {};
