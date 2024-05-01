@@ -59,7 +59,7 @@
       sha256 = "sha256-zsADaemc/tHOyX4RJM8yIN96meRTVOqh4zUMSF5lFU8=";
     };
   };
-  ipadapters = {
+  ipadapter = {
     ip-adapter_sd15 = {
       format = "safetensors";
       url = "https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter_sd15.safetensors";
